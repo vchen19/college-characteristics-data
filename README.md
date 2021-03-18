@@ -23,6 +23,9 @@ Next, 10-cluster Excel Solver analysis began on this data. The mean and standard
 
 The z-scores of the anchor schools that the Solver found are shown below. These z-scores are representative of the characteristics of each of the ten clusters, also shown below.
 
+![Cluster Characteristics Table](https://github.com/vchen19/college-characteristics-data/blob/main/Cluster%20Characteristics%20Table.png)
+![Cluster Characteristics Bar Graph](https://github.com/vchen19/college-characteristics-data/blob/main/Cluster%20Characteristics%20Bar%20Graph.png)
+
 The analysis resulted in 216 schools in the first cluster, 648 schools in the 2nd, 61 in the 3rd, 82 in the 4th, 261 in the 5th, 194 in the 6th, 189 in the 7th, 379 in the 8th, 29 in the 9th, and 10 in the 10th.
 
 ## Discussion
