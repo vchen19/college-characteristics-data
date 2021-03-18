@@ -11,15 +11,16 @@ Can cluster analysis help high school seniors to narrow down which universities 
 
 ## Data sources
 
-All data was sourced from the [Opportunity Insights College Data](https://opportunityinsights.org/data/?geographic_level=100&topic=105&paper_id=0#resource-listing). The original dataset can be found [here](https://github.com/vchen19/college-characteristics-data/blob/main/mrc_table10%20(1).csv).
+All data was sourced from the [Opportunity Insights College Data](https://opportunityinsights.org/data/?geographic_level=100&topic=105&paper_id=0#resource-listing). The original dataset can be found [here](https://github.com/vchen19/college-characteristics-data/blob/main/mrc_table10%20(1).csv). The database “College Level Characteristics from the IPEDS Database and the College Scorecard” lists characteristics like graduation rate and post-graduation salary for over 2000 colleges in the United States.
 
 ## Methods
 
-More detailed methods can be found here. 
+More detailed methods can be found [here](https://github.com/vchen19/college-characteristics-data/blob/main/Detailed_methods.md). 
 
-A database called “College Level Characteristics from the IPEDS Database and the College Scorecard” was downloaded from Opportunity Insights College Data. Each row lists a college or university. The college’s tier, instruction expenditures per student in 2013, sticker price in 2013, percent of students graduating within 150% of normal time in 2013, average faculty salary in 2013, and median earnings post graduation in 2011 were considered relevant columns for our analysis, and all other columns were deleted. Next, the data was sorted by the first column from high to low. The rows with missing data in that column would fall to the bottom, making it easier to delete rows with missing data. This process was repeated for all columns. Each school was assigned a unique number from 1-2069.
+The college’s tier, instruction expenditures per student in 2013, sticker price in 2013, percent of students graduating within 150% of normal time in 2013, average faculty salary in 2013, and median earnings post graduation in 2011 were considered relevant columns for our analysis, and all other columns were deleted. Next, schools with missing data were removed from the database. 
 
-Next, 10-cluster Excel Solver analysis began on this data. The mean and standard deviation was found for each of the six categories, which was used to find z-scores for each data point for each school. 10 anchor schools were arbitrarily chosen as a starting point for the optimization problem, and their respective z-scores were identified. Equations were set up to calculate the mean squared distance of each school’s z-scores to each anchor’s z-scores. The minimum distance of the 10 distances was identified for each school, then, the sum of these minimum distances was found. The Excel Solver tool was used to minimize this sum of minimum distances by changing the anchor schools. The individual schools in each cluster were found by matching the minimum distance of each school to a cluster. 
+Next, 10-cluster Excel Solver analysis began on this data. Z-scores for each data point for each school were found. 10 anchor schools were arbitrarily chosen as a starting point for the optimization problem, and their respective z-scores were identified. Equations were set up to calculate the mean squared distance of each school’s z-scores to each anchor’s z-scores. The minimum distance of the 10 distances was identified for each school, then, the sum of these minimum distances was found. The Excel Solver tool was used to minimize this sum of minimum distances by changing the anchor schools. The individual schools in each cluster were found by matching the minimum distance of each school to a cluster. 
+
 
 ## Results
 
@@ -32,7 +33,8 @@ The analysis resulted in 216 schools in the first cluster, 648 schools in the 2n
 
 ## Discussion
 
-Analysis like this can be useful to students looking to narrow down the thousands of college options that exist in this country. By identifying which schools have relatively high quality of education (reflected in metrics like expenditure per student) for relatively low cost (reflected in metrics like sticker price), a student can alleviate some worries about the cost of college and identify which colleges are best suited to their specific needs. For example, a student looking for a school with a lower sticker price with an above-average graduation rate might look at clusters 6 and 9, for schools like the University of Missouri or the Colorado School for Mines.
+Analysis like this can be useful to students looking to narrow down the thousands of college options that exist in this country. By identifying which schools have relatively high quality of education (reflected in metrics like expenditure per student) for relatively low cost (reflected in metrics like sticker price), a student can identify which colleges are best suited to their specific needs. For example, a student looking for a school with a lower sticker price with an above-average graduation rate might look at clusters 6 and 9, for schools like the University of Missouri or the Colorado School for Mines.
 
-There are limitations to this analysis. 10-cluster analysis cannot narrow down the number of schools to a reasonable amount for students to apply to. Additionally, other, more subjective factors should be taken into consideration for a student. However, this analysis can serve as a useful starting point to eliminate options that are not within a particular cluster of interest. A more precise analysis might find use a greater number of clusters. It would also be useful to find a way to not eliminate schools with missing data, perhaps by assigning an average value where there is data missing. This would ensure that any potential options are not excluded from the student’s decision-making process.
+There are limitations to this analysis. 10-cluster analysis cannot narrow down the number of schools to a reasonable amount for students to apply to. Additionally, other, more subjective factors should be taken into consideration for a student. However, this analysis can serve as a useful starting point to eliminate options that are not within a particular cluster of interest. A more precise analysis might find use a greater number of clusters. 
+
 
