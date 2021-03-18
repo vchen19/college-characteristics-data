@@ -15,6 +15,8 @@ All data was sourced from the [Opportunity Insights College Data](https://opport
 
 ## Methods
 
+More detailed methods can be found here. 
+
 A database called “College Level Characteristics from the IPEDS Database and the College Scorecard” was downloaded from Opportunity Insights College Data. Each row lists a college or university. The college’s tier, instruction expenditures per student in 2013, sticker price in 2013, percent of students graduating within 150% of normal time in 2013, average faculty salary in 2013, and median earnings post graduation in 2011 were considered relevant columns for our analysis, and all other columns were deleted. Next, the data was sorted by the first column from high to low. The rows with missing data in that column would fall to the bottom, making it easier to delete rows with missing data. This process was repeated for all columns. Each school was assigned a unique number from 1-2069.
 
 Next, 10-cluster Excel Solver analysis began on this data. The mean and standard deviation was found for each of the six categories, which was used to find z-scores for each data point for each school. 10 anchor schools were arbitrarily chosen as a starting point for the optimization problem, and their respective z-scores were identified. Equations were set up to calculate the mean squared distance of each school’s z-scores to each anchor’s z-scores. The minimum distance of the 10 distances was identified for each school, then, the sum of these minimum distances was found. The Excel Solver tool was used to minimize this sum of minimum distances by changing the anchor schools. The individual schools in each cluster were found by matching the minimum distance of each school to a cluster. 
