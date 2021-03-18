@@ -11,7 +11,7 @@ Can cluster analysis help high school seniors to narrow down which universities 
 
 ## Data sources
 
-All data was sourced from the [Opportunity Insights College Data](https://opportunityinsights.org/data/?geographic_level=100&topic=105&paper_id=0#resource-listing). The original dataset can be found [here]
+All data was sourced from the [Opportunity Insights College Data](https://opportunityinsights.org/data/?geographic_level=100&topic=105&paper_id=0#resource-listing). The original dataset can be found [here](https://github.com/vchen19/college-characteristics-data/blob/main/mrc_table10%20(1).csv).
 
 ## Methods
 
